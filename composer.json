@@ -1,8 +1,14 @@
 {
-    "name": "PHPBotApi/TGScraper",
+    "name": "root/tg-scraper",
     "description": "Telegram Scraper for auto-generation of Methods and Types",
     "type": "project",
     "license": "GNU General Public License v3.0",
+    "authors": [
+        {
+            "name": "Guard4534",
+            "email": "michele.marretti45@gmail.com"
+        }
+    ],
     "require": {
         "guzzlehttp/guzzle": "^7.0",
         "ext-dom": "*",
@@ -10,14 +16,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Gui\\":  "classes/",
-            "Scraper\\" : "classes/"
+            "Gui\\" : "src/",
+            "Scraper\\": "src/"
         }
-    },
-    "authors": [
-        {
-            "name": "Guard4534",
-            "email": "michele.marretti45@gmail.com"
-        }
-    ]
+    }
 }

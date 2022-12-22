@@ -1,9 +1,7 @@
 <?php
 
-
 require 'vendor/autoload.php';
-require 'classes/Scraper.php';
-require 'classes/Gui.php';
+
 
 Gui::introduction();
 
