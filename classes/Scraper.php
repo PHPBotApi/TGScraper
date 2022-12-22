@@ -121,21 +121,6 @@ class Scraper
         }
     }
 
-    public static function introduction(): void
-    {
-        echo "\e[1;35mTelegram Api Scraper developed by Guard4534\e[0m" . PHP_EOL . PHP_EOL;
-
-        echo "\e[1;35mThis project is an integral part of a framework\e[0m" . PHP_EOL;
-        echo "\e[1;35mto develop Telegram Bot with PHP much easier.\e[0m" . PHP_EOL . PHP_EOL;
-        echo "\e[1;35mGithub Framework:\e[0m https://github.com/PHPBotApi" . PHP_EOL;
-        echo "\e[1;35mGithub:\e[0m https://github.com/Guard4534" . PHP_EOL;
-        echo "\e[1;35mTelegram:\e[0m https://t.me/Guard4534" . PHP_EOL . PHP_EOL;
-        echo "\e[1;31mI release myself from any responsibility for any improper use of the code.\e[0m" . PHP_EOL;
-        echo PHP_EOL . PHP_EOL . PHP_EOL;
-
-        echo "Starting Script..." . PHP_EOL . PHP_EOL;
-    }
-
     /**
      * @return void
      */
