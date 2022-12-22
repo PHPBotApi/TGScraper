@@ -1,6 +1,8 @@
 <?php
-
 require 'vendor/autoload.php';
+
+use classes\Gui;
+use classes\Scraper;
 
 
 Gui::introduction();
