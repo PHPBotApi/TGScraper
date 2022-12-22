@@ -6,18 +6,18 @@ require 'vendor/autoload.php';
 require 'classes/Scraper.php';
 require 'classes/Gui.php';
 
-
 Gui::introduction();
 
 $response = Scraper::GetResponse();
 $body = Scraper::GetDOMDocument(response: (string)$response->getBody());
 
-$version = null;
+$check_version = false;
 
 foreach ($body as $element) {
 
-    if (empty($version)) {
+    if (!$check_version) {
         if (str_starts_with(haystack: $element->textContent, needle: 'Bot API')) {
+            $check_version = true;
             Gui::ApiVersion(version: $element->textContent);
         }
     }
