@@ -1,5 +1,5 @@
 {
-    "name": "root/tg-scraper",
+    "name": "phpbotapi/tg-scraper",
     "description": "Telegram Scraper for auto-generation of Methods and Types",
     "type": "project",
     "license": "GNU General Public License v3.0",
