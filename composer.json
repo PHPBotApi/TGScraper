@@ -12,7 +12,8 @@
     "require": {
         "guzzlehttp/guzzle": "^7.0",
         "ext-dom": "*",
-        "ext-libxml": "*"
+        "ext-libxml": "*",
+        "ext-ctype": "*"
     },
     "autoload": {
         "psr-4": {
