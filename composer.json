@@ -1,5 +1,5 @@
 {
-    "name": "phpbotapi/tg-scraper",
+    "name": "root/tg-scraper",
     "description": "Telegram Scraper for auto-generation of Methods and Types",
     "type": "project",
     "license": "GNU General Public License v3.0",
@@ -16,7 +16,6 @@
     },
     "autoload": {
         "psr-4": {
-            "Gui\\": "src/",
             "Scraper\\": "src/"
         }
     }
