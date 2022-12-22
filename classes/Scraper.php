@@ -61,11 +61,12 @@ class Scraper
         if (!strpos($textContent, ' ')) {
             self::$name = $textContent;
             $ascii = ord(self::$name[0]);
+
             if ($ascii >= 65 && $ascii <= 90) {
-                self::$types_count ++;
+                self::$types_count++;
                 self::$type = 'types';
             } else {
-                self::$methods_count ++;
+                self::$methods_count++;
                 self::$type = 'methods';
             }
 
@@ -74,7 +75,7 @@ class Scraper
             ];
 
             return ['type' => self::$type, 'name' => self::$name];
-        } else  return null;
+        } else return null;
     }
 
     /**
@@ -83,8 +84,7 @@ class Scraper
      */
     public static function set_description($element): void
     {
-        $description = $element->textContent;
-        self::$json[self::$type][self::$name]['description'] = $description;
+        self::$json[self::$type][self::$name]['description'] = $element->textContent;
     }
 
     /**
@@ -93,11 +93,6 @@ class Scraper
      */
     #[NoReturn] public static function set_fields($matches): void
     {
-
-        if (!isset(self::$json[self::$type][self::$name]['fields'])) {
-            self::$json[self::$type][self::$name]['fields'] = [];
-        }
-
         foreach ($matches[0] as $tr) {
             $values = explode("\n", $tr);
             $name = @$values[0];
@@ -126,7 +121,8 @@ class Scraper
         }
     }
 
-    public static function introduction(): void {
+    public static function introduction(): void
+    {
         echo "\e[1;35mTelegram Api Scraper developed by Guard4534\e[0m" . PHP_EOL . PHP_EOL;
 
         echo "\e[1;35mThis project is an integral part of a framework\e[0m" . PHP_EOL;
@@ -137,7 +133,7 @@ class Scraper
         echo "\e[1;31mI release myself from any responsibility for any improper use of the code.\e[0m" . PHP_EOL;
         echo PHP_EOL . PHP_EOL . PHP_EOL;
 
-        echo "Starting Script..." . PHP_EOL.PHP_EOL;
+        echo "Starting Script..." . PHP_EOL . PHP_EOL;
     }
 
     /**
