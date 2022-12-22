@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Gui\\" : "src/",
+            "Gui\\": "src/",
             "Scraper\\": "src/"
         }
     }
