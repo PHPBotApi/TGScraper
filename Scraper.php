@@ -1,8 +1,7 @@
 <?php
 require 'vendor/autoload.php';
-
 require 'src/Gui.php';
-require 'src/Scraper.php';
+require 'src/Scraper.class.php';
 
 use classes\Gui;
 use classes\Scraper;
