@@ -1,14 +1,16 @@
 <?php
 require 'vendor/autoload.php';
 
+require 'src/Gui.php';
+require 'src/Scraper.php';
+
 use classes\Gui;
 use classes\Scraper;
 
 Gui::introduction();
 
-$response = Scraper::GetResponse();
+$response = (new Scraper)->GetResponse();
 $body = Scraper::GetDOMDocument(response: (string)$response->getBody());
-
 
 $check_version = false;
 foreach ($body as $element) {

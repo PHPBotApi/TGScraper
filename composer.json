@@ -1,6 +1,5 @@
 {
     "require": {
-        "ext-ctype": "*",
         "ext-dom": "*",
         "ext-libxml": "*",
         "guzzlehttp/guzzle": "^7.0"

@@ -24,9 +24,10 @@ class Scraper
     /**
      * @return ResponseInterface|void
      */
-    public static function GetResponse()
+    public function GetResponse()
     {
         try {
+            self::$Client = new Client();
             $response = self::$Client->request('GET', 'https://core.telegram.org/bots/api');
         } catch (GuzzleException $e) {
             die('Error on response: ' . $e->getMessage());
