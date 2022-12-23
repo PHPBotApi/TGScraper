@@ -34,9 +34,12 @@ The JSON file is structured like this:
 ```
 {
   "types": { //An object containing objects of all Telegram Types
+  
     "type_name": { //The Object of Type
+    
       "name": "name", //The name of Type
       "description": "description", //The decription of Type
+      
       "fields": [ //Fields represent an array of objects containing all fields of this Type, example below
         {
           "name": "update_id", //The name of field
@@ -47,9 +50,12 @@ The JSON file is structured like this:
     }
   },
   "methods": { //An object containing objects of all Telegram Methods
+  
     "methods_name": { //The Object of Method
+    
       "name": "name", //The name of Method
       "description": "description", //The description of Method
+      
       "fields": [
         {
           "name": "offset", //The name of field
