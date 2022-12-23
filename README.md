@@ -47,7 +47,7 @@ composer require guzzlehttp/guzzle:^7.0
 
 
 # How To Use
-TGScraper is very easy to use. infact just run the php file called Scraper.php which will automatically generate the JSON file api.json
+TGScraper is very easy to use. You need only to run the php file called Scraper.php to obtain a JSON file called api.json containing all Types and Methods.
 
 
 ```sh
