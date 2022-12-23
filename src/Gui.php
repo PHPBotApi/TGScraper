@@ -8,7 +8,7 @@ class Gui
     {
         $text = "\e[1;35mTelegram Api Scraper developed by Guard4534\e[0m" . PHP_EOL . PHP_EOL;
         $text .= "\e[1;35mThis project is an integral part of a framework\e[0m" . PHP_EOL;
-        $text .= "\e[1;35mto develop Telegram Bot with PHP much easier.\e[0m" . PHP_EOL . PHP_EOL;
+        $text .= "\e[1;35mto develop Telegram Bot with PHP in a very easy way.\e[0m" . PHP_EOL . PHP_EOL;
         $text .= "\e[1;35mGithub Framework:\e[0m https://github.com/PHPBotApi" . PHP_EOL;
         $text .= "\e[1;35mGithub:\e[0m https://github.com/Guard4534" . PHP_EOL;
         $text .= "\e[1;35mTelegram:\e[0m https://t.me/Guard4534" . PHP_EOL . PHP_EOL;
