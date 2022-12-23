@@ -25,7 +25,7 @@ $body = Scraper::GetDOMDocument(response: (string)$response->getBody());
 ```
 
 # Requirements
-• [PHP 8+](https://www.php.net/downloads.php#v8.2.0)
+• [PHP 8.2](https://www.php.net/downloads.php#v8.2.0)
 
 • [PHPDomDocument Extension](https://www.php.net/manual/en/book.dom.php#book.dom)
 
