@@ -9,6 +9,7 @@ Gui::introduction();
 $response = Scraper::GetResponse();
 $body = Scraper::GetDOMDocument(response: (string)$response->getBody());
 
+
 $check_version = false;
 foreach ($body as $element) {
 
