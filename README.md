@@ -33,26 +33,6 @@ The JSON file is structured like this:
 
 ```
 {
-"types": { 
-  
-  "type_name" : { 
-   "name" : "name", 
-   "description", : "description" 
-   
-   "fields" : { 
-     {
-     "name": "update_id",
-          "type": "Integer",
-          "description": "The update's unique identifier":
-     }
-    
-   }
-}
-}
-}
-}
-
-{
   "types": { //An object containing objects of all Telegram Types
     "type_name": { //The Object of Type
       "name": "name", //The name of Type
@@ -81,3 +61,4 @@ The JSON file is structured like this:
     }
   }
 }
+```
