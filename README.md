@@ -58,39 +58,39 @@ php Scraper.php
 # JSON Structure
 The JSON file is structured like this: 
 
-```
+``` json
 {
   "types": { 
   
     "type_name": {
-      "name": // The name of Type
-      "description": // The decription of Type 
+      "name": "The name of Type"
+      "description": "The decription of Type"
       "fields": [ 
         {
-          "name": // String, field name
-          "type": // String, field type
-          "description": // String, field description
+          "name": "String, field name"
+          "type": "String, field type"
+          "description": "String, field description"
         },
         ...
-      ] -> Array of fields
-    } -> The Object of sigle Type
-  } -> An Object containing objects of all Telegram Types,
+      ] "-> Array of fields"
+    } "-> The Object of sigle Type"
+  } "-> An Object containing objects of all Telegram Types"
   
   "methods": { 
   
     "methods_name": { 
-      "name": // String, Method name 
-      "description": //string, Method description 
+      "name": "String, Method name"
+      "description": "string, Method description"
       "fields": [
         {
-          "name": // field name 
-          "type": // field type 
-          "required": // Yes or No, if field is required or optional
-          "description": // field description
+          "name": "field name"
+          "type": "field type" 
+          "required": "Yes or No, if field is required or optional"
+          "description": "field description"
         },
         ...
-      ] -> Array of fields
-    } -> The Object of single Method
-  } -> An object containing objects of all Telegram Methods
+      ] "-> Array of fields"
+    } "-> The Object of single Method"
+  } "-> An object containing objects of all Telegram Methods"
 }
 ```
