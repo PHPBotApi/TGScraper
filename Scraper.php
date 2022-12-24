@@ -3,8 +3,8 @@ require 'vendor/autoload.php';
 require 'src/Gui.php';
 require 'src/Scraper.class.php';
 
-use classes\Gui;
-use classes\Scraper;
+use  Phpbotapi\TgScraper\Gui;
+use  Phpbotapi\TgScraper\Scraper;
 
 Gui::introduction();
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace classes;
+namespace Phpbotapi\TgScraper;
 
 use DOMDocument;
 use DOMNodeList;

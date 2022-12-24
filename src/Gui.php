@@ -1,6 +1,6 @@
 <?php
 
-namespace classes;
+namespace Phpbotapi\TgScraper;
 
 class Gui
 {
