@@ -1,4 +1,6 @@
 <?php
+if (!is_dir("vendor")) die("No such directory vendor. Please follow READMe.md to install libraries with composer");
+
 require 'vendor/autoload.php';
 require 'src/Gui.php';
 require 'src/Scraper.php';
