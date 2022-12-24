@@ -1,23 +1,7 @@
 {
-    "name": "phpbotapi/tg-scraper",
-    "description": "Telegram Scraper for auto-generation of Methods and Types",
-    "type": "project",
-    "license": "GPL-3.0-or-later",
     "require": {
         "guzzlehttp/guzzle": "^7.0",
         "ext-dom": "*",
         "ext-libxml": "*"
-    },
-    "autoload": {
-        "psr-4": {
-            "Phpbotapi\\TgScraper\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "Guard4534",
-            "email": "michele.marretti45@gmail.com"
-        }
-    ],
-    "minimum-stability": "stable"
+    }
 }
