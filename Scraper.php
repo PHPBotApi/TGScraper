@@ -1,12 +1,14 @@
 <?php
-if (!is_dir("vendor")) die("No such directory vendor. Please follow READMe.md to install libraries with composer");
+if (!is_dir("vendor")) {
+    die("\e[1;31mNo vendor directory found. Please follow README.md to install libraries with composer\e[0m");
+}
 
 require 'vendor/autoload.php';
 require 'src/Gui.php';
 require 'src/Scraper.php';
 
-use  Phpbotapi\TgScraper\Gui;
-use  Phpbotapi\TgScraper\Scraper;
+use Phpbotapi\TgScraper\Gui;
+use Phpbotapi\TgScraper\Scraper;
 
 Gui::introduction();
 
