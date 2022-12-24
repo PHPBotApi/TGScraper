@@ -86,7 +86,7 @@ The JSON file is structured like this:
   
   "methods": { 
   
-    "methods_name": { 
+    "method_name": { 
       "name": "String, Method name"
       "description": "string, Method description"
       "fields": [
