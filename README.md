@@ -14,7 +14,7 @@ _P.s. This Repository is a part of PHPBotApi Framework._
 ``` php
 require 'vendor/autoload.php';
 require 'src/Gui.php';
-require 'src/Scraper.class.php';
+require 'src/Scraper.php';
 
 use classes\Gui;
 use classes\Scraper;
