@@ -46,9 +46,15 @@ or throught
 composer require guzzlehttp/guzzle:^7.0
 ```
 
+# Installation
+You can install with git command
+
+```sh
+git clone https://github.com/PHPBotApi/TGScraper.git
+```
 
 # How To Use
-TGScraper is very easy to use. You need only to run the php file called Scraper.php to obtain a JSON file called api.json containing all Types and Methods.
+**TGScraper** is very easy to use. You need only to run the php file called Scraper.php to obtain a JSON file called api.json containing all Types and Methods.
 
 
 ```sh
