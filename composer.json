@@ -19,8 +19,5 @@
             "email": "michele.marretti45@gmail.com"
         }
     ],
-    "bin": [
-        "bin/Scraper.php"
-    ],
     "minimum-stability": "stable"
 }
