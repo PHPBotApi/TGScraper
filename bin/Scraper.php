@@ -1,7 +1,7 @@
 <?php
 require 'vendor/autoload.php';
 require 'src/Gui.php';
-require 'src/Scraper.class.php';
+require 'src/Scraper.php';
 
 use  Phpbotapi\TgScraper\Gui;
 use  Phpbotapi\TgScraper\Scraper;
