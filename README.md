@@ -6,6 +6,10 @@
 [![License](https://img.shields.io/badge/License-GPL%20v3.0-darkred?labelColor=404040&style=flat&logo=GNU-Privacy-Guard&link=https://github.com/PHPBotApi/TGScraper/blob/master/LICENSE)](https://github.com/PHPBotApi/TGScraper/blob/master/LICENSE)
 [![Chat](https://img.shields.io/badge/Chat-Support-orange?labelColor=404040&style=flat&logo=telegram&link=https://t.me/BotApiPHP)](https://t.me/BotApiPHP)
 
+[![Build Status](https://scrutinizer-ci.com/g/PHPBotApi/TGScraper/badges/build.png?b=master)](https://scrutinizer-ci.com/g/PHPBotApi/TGScraper/build-status/master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/PHPBotApi/TGScraper/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/PHPBotApi/TGScraper/?branch=master)
+[![Code Intelligence Status](https://scrutinizer-ci.com/g/PHPBotApi/TGScraper/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
+
 **TGScraper** is a simple PHP Scraper that uses only one easy-to-install external library. It generates a [JSON](https://www.codewall.co.uk/how-to-read-json-file-using-php-examples/) containing all TelegramAPI's Types and Methods that will be used to auto-generate the core functions of the Framework.
 
 _P.s. This Repository is a part of PHPBotApi Framework._
