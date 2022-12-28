@@ -175,7 +175,7 @@
         {
           "name": "allowed_updates",
           "type": [
-            "Array of String"
+            "Array<string>"
           ],
           "description": "Optional. A list of update types the bot is subscribed to. Defaults to all update types except chat_member"
         }
@@ -329,7 +329,7 @@
         {
           "name": "active_usernames",
           "type": [
-            "Array of String"
+            "Array<string>"
           ],
           "description": "Optional. If non-empty, the list of all active chat usernames; for private chats, supergroups and channels. Returned only in getChat."
         },
@@ -609,7 +609,7 @@
         {
           "name": "entities",
           "type": [
-            "Array of MessageEntity"
+            "Array<MessageEntity>"
           ],
           "description": "Optional. For text messages, special entities like usernames, URLs, bot commands, etc. that appear in the text"
         },
@@ -637,7 +637,7 @@
         {
           "name": "photo",
           "type": [
-            "Array of PhotoSize"
+            "Array<PhotoSize>"
           ],
           "description": "Optional. Message is a photo, available sizes of the photo"
         },
@@ -679,7 +679,7 @@
         {
           "name": "caption_entities",
           "type": [
-            "Array of MessageEntity"
+            "Array<MessageEntity>"
           ],
           "description": "Optional. For messages with a caption, special entities like usernames, URLs, bot commands, etc. that appear in the caption"
         },
@@ -728,7 +728,7 @@
         {
           "name": "new_chat_members",
           "type": [
-            "Array of User"
+            "Array<User>"
           ],
           "description": "Optional. New members that were added to the group or supergroup and information about them (the bot itself may be one of these members)"
         },
@@ -749,7 +749,7 @@
         {
           "name": "new_chat_photo",
           "type": [
-            "Array of PhotoSize"
+            "Array<PhotoSize>"
           ],
           "description": "Optional. A chat photo was change to this value"
         },
@@ -1477,7 +1477,7 @@
         {
           "name": "option_ids",
           "type": [
-            "Array of Integer"
+            "Array<int>"
           ],
           "description": "0-based identifiers of answer options, chosen by the user. May be empty if the user retracted their vote."
         }
@@ -1505,7 +1505,7 @@
         {
           "name": "options",
           "type": [
-            "Array of PollOption"
+            "Array<PollOption>"
           ],
           "description": "List of poll options"
         },
@@ -1561,7 +1561,7 @@
         {
           "name": "explanation_entities",
           "type": [
-            "Array of MessageEntity"
+            "Array<MessageEntity>"
           ],
           "description": "Optional. Special entities like usernames, URLs, bot commands, etc. that appear in the explanation"
         },
@@ -1831,7 +1831,7 @@
         {
           "name": "users",
           "type": [
-            "Array of User"
+            "Array<User>"
           ],
           "description": "New members that were invited to the video chat"
         }
@@ -1852,7 +1852,7 @@
         {
           "name": "photos",
           "type": [
-            "Array of Array of PhotoSize"
+            "Array<Array<PhotoSize>>"
           ],
           "description": "Requested profile pictures (in up to 4 sizes each)"
         }
@@ -1915,7 +1915,7 @@
         {
           "name": "keyboard",
           "type": [
-            "Array of Array of KeyboardButton"
+            "Array<Array<KeyboardButton>>"
           ],
           "description": "Array of button rows, each represented by an Array of KeyboardButton objects"
         },
@@ -2034,7 +2034,7 @@
         {
           "name": "inline_keyboard",
           "type": [
-            "Array of Array of InlineKeyboardButton"
+            "Array<Array<InlineKeyboardButton>>"
           ],
           "description": "Array of button rows, each represented by an Array of InlineKeyboardButton objects"
         }
@@ -3261,7 +3261,7 @@
         {
           "name": "caption_entities",
           "type": [
-            "Array of MessageEntity"
+            "Array<MessageEntity>"
           ],
           "description": "Optional. List of special entities that appear in the caption, which can be specified instead of parse_mode"
         }
@@ -3311,7 +3311,7 @@
         {
           "name": "caption_entities",
           "type": [
-            "Array of MessageEntity"
+            "Array<MessageEntity>"
           ],
           "description": "Optional. List of special entities that appear in the caption, which can be specified instead of parse_mode"
         },
@@ -3389,7 +3389,7 @@
         {
           "name": "caption_entities",
           "type": [
-            "Array of MessageEntity"
+            "Array<MessageEntity>"
           ],
           "description": "Optional. List of special entities that appear in the caption, which can be specified instead of parse_mode"
         },
@@ -3460,7 +3460,7 @@
         {
           "name": "caption_entities",
           "type": [
-            "Array of MessageEntity"
+            "Array<MessageEntity>"
           ],
           "description": "Optional. List of special entities that appear in the caption, which can be specified instead of parse_mode"
         },
@@ -3531,7 +3531,7 @@
         {
           "name": "caption_entities",
           "type": [
-            "Array of MessageEntity"
+            "Array<MessageEntity>"
           ],
           "description": "Optional. List of special entities that appear in the caption, which can be specified instead of parse_mode"
         },
@@ -3698,7 +3698,7 @@
         {
           "name": "stickers",
           "type": [
-            "Array of Sticker"
+            "Array<Sticker>"
           ],
           "description": "List of all set stickers"
         },
@@ -3963,7 +3963,7 @@
         {
           "name": "caption_entities",
           "type": [
-            "Array of MessageEntity"
+            "Array<MessageEntity>"
           ],
           "description": "Optional. List of special entities that appear in the caption, which can be specified instead of parse_mode"
         },
@@ -4068,7 +4068,7 @@
         {
           "name": "caption_entities",
           "type": [
-            "Array of MessageEntity"
+            "Array<MessageEntity>"
           ],
           "description": "Optional. List of special entities that appear in the caption, which can be specified instead of parse_mode"
         },
@@ -4173,7 +4173,7 @@
         {
           "name": "caption_entities",
           "type": [
-            "Array of MessageEntity"
+            "Array<MessageEntity>"
           ],
           "description": "Optional. List of special entities that appear in the caption, which can be specified instead of parse_mode"
         },
@@ -4257,7 +4257,7 @@
         {
           "name": "caption_entities",
           "type": [
-            "Array of MessageEntity"
+            "Array<MessageEntity>"
           ],
           "description": "Optional. List of special entities that appear in the caption, which can be specified instead of parse_mode"
         },
@@ -4355,7 +4355,7 @@
         {
           "name": "caption_entities",
           "type": [
-            "Array of MessageEntity"
+            "Array<MessageEntity>"
           ],
           "description": "Optional. List of special entities that appear in the caption, which can be specified instead of parse_mode"
         },
@@ -4439,7 +4439,7 @@
         {
           "name": "caption_entities",
           "type": [
-            "Array of MessageEntity"
+            "Array<MessageEntity>"
           ],
           "description": "Optional. List of special entities that appear in the caption, which can be specified instead of parse_mode"
         },
@@ -4509,7 +4509,7 @@
         {
           "name": "caption_entities",
           "type": [
-            "Array of MessageEntity"
+            "Array<MessageEntity>"
           ],
           "description": "Optional. List of special entities that appear in the caption, which can be specified instead of parse_mode"
         },
@@ -4964,7 +4964,7 @@
         {
           "name": "caption_entities",
           "type": [
-            "Array of MessageEntity"
+            "Array<MessageEntity>"
           ],
           "description": "Optional. List of special entities that appear in the caption, which can be specified instead of parse_mode"
         },
@@ -5034,7 +5034,7 @@
         {
           "name": "caption_entities",
           "type": [
-            "Array of MessageEntity"
+            "Array<MessageEntity>"
           ],
           "description": "Optional. List of special entities that appear in the caption, which can be specified instead of parse_mode"
         },
@@ -5104,7 +5104,7 @@
         {
           "name": "caption_entities",
           "type": [
-            "Array of MessageEntity"
+            "Array<MessageEntity>"
           ],
           "description": "Optional. List of special entities that appear in the caption, which can be specified instead of parse_mode"
         },
@@ -5223,7 +5223,7 @@
         {
           "name": "caption_entities",
           "type": [
-            "Array of MessageEntity"
+            "Array<MessageEntity>"
           ],
           "description": "Optional. List of special entities that appear in the caption, which can be specified instead of parse_mode"
         },
@@ -5300,7 +5300,7 @@
         {
           "name": "caption_entities",
           "type": [
-            "Array of MessageEntity"
+            "Array<MessageEntity>"
           ],
           "description": "Optional. List of special entities that appear in the caption, which can be specified instead of parse_mode"
         },
@@ -5370,7 +5370,7 @@
         {
           "name": "caption_entities",
           "type": [
-            "Array of MessageEntity"
+            "Array<MessageEntity>"
           ],
           "description": "Optional. List of special entities that appear in the caption, which can be specified instead of parse_mode"
         },
@@ -5433,7 +5433,7 @@
         {
           "name": "caption_entities",
           "type": [
-            "Array of MessageEntity"
+            "Array<MessageEntity>"
           ],
           "description": "Optional. List of special entities that appear in the caption, which can be specified instead of parse_mode"
         },
@@ -5481,7 +5481,7 @@
         {
           "name": "entities",
           "type": [
-            "Array of MessageEntity"
+            "Array<MessageEntity>"
           ],
           "description": "Optional. List of special entities that appear in message text, which can be specified instead of parse_mode"
         },
@@ -5684,7 +5684,7 @@
         {
           "name": "prices",
           "type": [
-            "Array of LabeledPrice"
+            "Array<LabeledPrice>"
           ],
           "description": "Price breakdown, a JSON-serialized list of components (e.g. product price, tax, discount, delivery cost, delivery tax, bonus, etc.)"
         },
@@ -5698,7 +5698,7 @@
         {
           "name": "suggested_tip_amounts",
           "type": [
-            "Array of Integer"
+            "Array<int>"
           ],
           "description": "Optional. A JSON-serialized array of suggested amounts of tip in the smallest units of the currency (integer, not float\/double). At most 4 suggested tip amounts can be specified. The suggested tip amounts must be positive, passed in a strictly increased order and must not exceed max_tip_amount."
         },
@@ -6013,7 +6013,7 @@
         {
           "name": "prices",
           "type": [
-            "Array of LabeledPrice"
+            "Array<LabeledPrice>"
           ],
           "description": "List of price portions"
         }
@@ -6174,7 +6174,7 @@
         {
           "name": "data",
           "type": [
-            "Array of EncryptedPassportElement"
+            "Array<EncryptedPassportElement>"
           ],
           "description": "Array with information about documents and other Telegram Passport elements that was shared with the bot"
         },
@@ -6258,7 +6258,7 @@
         {
           "name": "files",
           "type": [
-            "Array of PassportFile"
+            "Array<PassportFile>"
           ],
           "description": "Optional. Array of encrypted files with documents provided by the user, available for \u201cutility_bill\u201d, \u201cbank_statement\u201d, \u201crental_agreement\u201d, \u201cpassport_registration\u201d and \u201ctemporary_registration\u201d types. Files can be decrypted and verified using the accompanying EncryptedCredentials."
         },
@@ -6286,7 +6286,7 @@
         {
           "name": "translation",
           "type": [
-            "Array of PassportFile"
+            "Array<PassportFile>"
           ],
           "description": "Optional. Array of encrypted files with translated versions of documents provided by the user. Available if requested for \u201cpassport\u201d, \u201cdriver_license\u201d, \u201cidentity_card\u201d, \u201cinternal_passport\u201d, \u201cutility_bill\u201d, \u201cbank_statement\u201d, \u201crental_agreement\u201d, \u201cpassport_registration\u201d and \u201ctemporary_registration\u201d types. Files can be decrypted and verified using the accompanying EncryptedCredentials."
         },
@@ -6547,7 +6547,7 @@
         {
           "name": "file_hashes",
           "type": [
-            "Array of String"
+            "Array<string>"
           ],
           "description": "List of base64-encoded file hashes"
         },
@@ -6617,7 +6617,7 @@
         {
           "name": "file_hashes",
           "type": [
-            "Array of String"
+            "Array<string>"
           ],
           "description": "List of base64-encoded file hashes"
         },
@@ -6687,7 +6687,7 @@
         {
           "name": "photo",
           "type": [
-            "Array of PhotoSize"
+            "Array<PhotoSize>"
           ],
           "description": "Photo that will be displayed in the game message in chats."
         },
@@ -6701,7 +6701,7 @@
         {
           "name": "text_entities",
           "type": [
-            "Array of MessageEntity"
+            "Array<MessageEntity>"
           ],
           "description": "Optional. Special entities that appear in text, such as usernames, URLs, bot commands, etc."
         },
@@ -6782,7 +6782,7 @@
         {
           "name": "allowed_updates",
           "type": [
-            "Array of String"
+            "Array<string>"
           ],
           "required": true,
           "description": "A JSON-serialized list of the update types you want your bot to receive. For example, specify [\u201cmessage\u201d, \u201cedited_channel_post\u201d, \u201ccallback_query\u201d] to only receive updates of these types. See Update for a complete list of available update types. Specify an empty list to receive all update types except chat_member (default). If not specified, the previous setting will be used.Please note that this parameter doesn't affect updates created before the call to the getUpdates, so unwanted updates may be received for a short period of time."
@@ -6829,7 +6829,7 @@
         {
           "name": "allowed_updates",
           "type": [
-            "Array of String"
+            "Array<string>"
           ],
           "required": true,
           "description": "A JSON-serialized list of the update types you want your bot to receive. For example, specify [\u201cmessage\u201d, \u201cedited_channel_post\u201d, \u201ccallback_query\u201d] to only receive updates of these types. See Update for a complete list of available update types. Specify an empty list to receive all update types except chat_member (default). If not specified, the previous setting will be used.Please note that this parameter doesn't affect updates created before the call to the setWebhook, so unwanted updates may be received for a short period of time."
@@ -6932,7 +6932,7 @@
         {
           "name": "entities",
           "type": [
-            "Array of MessageEntity"
+            "Array<MessageEntity>"
           ],
           "required": true,
           "description": "A JSON-serialized list of special entities that appear in message text, which can be specified instead of parse_mode"
@@ -7105,7 +7105,7 @@
         {
           "name": "caption_entities",
           "type": [
-            "Array of MessageEntity"
+            "Array<MessageEntity>"
           ],
           "required": true,
           "description": "A JSON-serialized list of special entities that appear in the new caption, which can be specified instead of parse_mode"
@@ -7205,7 +7205,7 @@
         {
           "name": "caption_entities",
           "type": [
-            "Array of MessageEntity"
+            "Array<MessageEntity>"
           ],
           "required": true,
           "description": "A JSON-serialized list of special entities that appear in the caption, which can be specified instead of parse_mode"
@@ -7305,7 +7305,7 @@
         {
           "name": "caption_entities",
           "type": [
-            "Array of MessageEntity"
+            "Array<MessageEntity>"
           ],
           "required": true,
           "description": "A JSON-serialized list of special entities that appear in the caption, which can be specified instead of parse_mode"
@@ -7447,7 +7447,7 @@
         {
           "name": "caption_entities",
           "type": [
-            "Array of MessageEntity"
+            "Array<MessageEntity>"
           ],
           "required": true,
           "description": "A JSON-serialized list of special entities that appear in the caption, which can be specified instead of parse_mode"
@@ -7588,7 +7588,7 @@
         {
           "name": "caption_entities",
           "type": [
-            "Array of MessageEntity"
+            "Array<MessageEntity>"
           ],
           "required": true,
           "description": "A JSON-serialized list of special entities that appear in the caption, which can be specified instead of parse_mode"
@@ -7729,7 +7729,7 @@
         {
           "name": "caption_entities",
           "type": [
-            "Array of MessageEntity"
+            "Array<MessageEntity>"
           ],
           "required": true,
           "description": "A JSON-serialized list of special entities that appear in the caption, which can be specified instead of parse_mode"
@@ -7829,7 +7829,7 @@
         {
           "name": "caption_entities",
           "type": [
-            "Array of MessageEntity"
+            "Array<MessageEntity>"
           ],
           "required": true,
           "description": "A JSON-serialized list of special entities that appear in the caption, which can be specified instead of parse_mode"
@@ -8553,7 +8553,7 @@
         {
           "name": "options",
           "type": [
-            "Array of String"
+            "Array<string>"
           ],
           "required": false,
           "description": "A JSON-serialized list of answer options, 2-10 strings 1-100 characters each"
@@ -8609,7 +8609,7 @@
         {
           "name": "explanation_entities",
           "type": [
-            "Array of MessageEntity"
+            "Array<MessageEntity>"
           ],
           "required": true,
           "description": "A JSON-serialized list of special entities that appear in the poll explanation, which can be specified instead of parse_mode"
@@ -9881,7 +9881,7 @@
         {
           "name": "commands",
           "type": [
-            "Array of BotCommand"
+            "Array<BotCommand>"
           ],
           "required": false,
           "description": "A JSON-serialized list of bot commands to be set as the list of the bot's commands. At most 100 commands can be specified."
@@ -10075,7 +10075,7 @@
         {
           "name": "entities",
           "type": [
-            "Array of MessageEntity"
+            "Array<MessageEntity>"
           ],
           "required": true,
           "description": "A JSON-serialized list of special entities that appear in message text, which can be specified instead of parse_mode"
@@ -10147,7 +10147,7 @@
         {
           "name": "caption_entities",
           "type": [
-            "Array of MessageEntity"
+            "Array<MessageEntity>"
           ],
           "required": true,
           "description": "A JSON-serialized list of special entities that appear in the caption, which can be specified instead of parse_mode"
@@ -10405,7 +10405,7 @@
         {
           "name": "custom_emoji_ids",
           "type": [
-            "Array of String"
+            "Array<string>"
           ],
           "required": false,
           "description": "List of custom emoji identifiers. At most 200 custom emoji identifiers can be specified."
@@ -10665,7 +10665,7 @@
         {
           "name": "results",
           "type": [
-            "Array of InlineQueryResult"
+            "Array<InlineQueryResult>"
           ],
           "required": false,
           "description": "A JSON-serialized array of results for the inline query"
@@ -10800,7 +10800,7 @@
         {
           "name": "prices",
           "type": [
-            "Array of LabeledPrice"
+            "Array<LabeledPrice>"
           ],
           "required": false,
           "description": "Price breakdown, a JSON-serialized list of components (e.g. product price, tax, discount, delivery cost, delivery tax, bonus, etc.)"
@@ -10816,7 +10816,7 @@
         {
           "name": "suggested_tip_amounts",
           "type": [
-            "Array of Integer"
+            "Array<int>"
           ],
           "required": true,
           "description": "A JSON-serialized array of suggested amounts of tips in the smallest units of the currency (integer, not float\/double). At most 4 suggested tip amounts can be specified. The suggested tip amounts must be positive, passed in a strictly increased order and must not exceed max_tip_amount."
@@ -11015,7 +11015,7 @@
         {
           "name": "prices",
           "type": [
-            "Array of LabeledPrice"
+            "Array<LabeledPrice>"
           ],
           "required": false,
           "description": "Price breakdown, a JSON-serialized list of components (e.g. product price, tax, discount, delivery cost, delivery tax, bonus, etc.)"
@@ -11031,7 +11031,7 @@
         {
           "name": "suggested_tip_amounts",
           "type": [
-            "Array of Integer"
+            "Array<int>"
           ],
           "required": true,
           "description": "A JSON-serialized array of suggested amounts of tips in the smallest units of the currency (integer, not float\/double). At most 4 suggested tip amounts can be specified. The suggested tip amounts must be positive, passed in a strictly increased order and must not exceed max_tip_amount."
@@ -11158,7 +11158,7 @@
         {
           "name": "shipping_options",
           "type": [
-            "Array of ShippingOption"
+            "Array<ShippingOption>"
           ],
           "required": true,
           "description": "Required if ok is True. A JSON-serialized array of available shipping options."
@@ -11220,7 +11220,7 @@
         {
           "name": "errors",
           "type": [
-            "Array of PassportElementError"
+            "Array<PassportElementError>"
           ],
           "required": false,
           "description": "A JSON-serialized array describing the errors"
