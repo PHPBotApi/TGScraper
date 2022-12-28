@@ -16,8 +16,8 @@ require 'vendor/autoload.php';
 require 'src/Gui.php';
 require 'src/Scraper.php';
 
-use classes\Gui;
-use classes\Scraper;
+use Phpbotapi\TgScraper\Gui;
+use Phpbotapi\TgScraper\Scraper;
 
 Gui::introduction();
 
