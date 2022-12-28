@@ -11,15 +11,16 @@ use Psr\Http\Message\ResponseInterface;
 
 class Scraper
 {
-    protected static string $name;
-    protected static string $type;
-    protected static Client $Client;
+    private static string $name;
+    private static string $type;
+    private static Client $Client;
     public static int $types_count = 0;
     public static int $methods_count = 0;
-    protected static array $json = [
+    public static array $json = [
         'types' => [],
         'methods' => []
     ];
+
 
     /**
      * @return ResponseInterface|void
@@ -99,25 +100,73 @@ class Scraper
 
             if (self::$type == 'types') {
                 $desc = @$values[2];
-
                 self::$json[self::$type][self::$name]['fields'][] = [
                     'name' => $name,
-                    'type' => $type,
+                    'type' => self::clean_type($type),
                     'description' => $desc
                 ];
-            } else {
-
+            } elseif (self::$type == 'methods') {
                 $required = @$values[2];
                 $desc = @$values[3];
 
                 self::$json[self::$type][self::$name]['fields'][] = [
                     'name' => $name,
-                    'type' => $type,
-                    'required' => str_starts_with($required, 'Optional') ? 'Yes' : 'No',
+                    'type' => self::clean_type($type),
+                    'required' => str_starts_with($required, 'Optional'),
                     'description' => $desc
                 ];
             }
         }
+    }
+
+    /**
+     * @param $element
+     * @return void
+     */
+    public static function set_extended_by($element): void
+    {
+        $extensions = array_filter(explode("\n", $element->textContent), "strlen");
+        foreach ($extensions as $extension) {
+            self::$json[self::$type][self::$name]['extended_by'][] = $extension;
+        }
+    }
+
+    /**
+     * @param string $type
+     * @return array|string[]
+     */
+    private static function clean_type(string $type): array
+    {
+        $array = [];
+        if (preg_match("/ and | or |, /", $type)) {
+            $raw = str_replace([' or ', ' and ', ', '], '&', $type);
+
+            $types = explode('&', $raw);
+            foreach ($types as $type) {
+                $array[] = self::fix_type($type);
+            }
+            return $array;
+        } else {
+            return [self::fix_type($type)];
+        }
+    }
+
+
+    /**
+     * @param string $type
+     * @return string
+     */
+    private static function fix_type(string $type): string
+    {
+
+        return match ($type) {
+            "Float", "Float number" => "float",
+            "String" => "string",
+            "Integer" => "int",
+            "Bool", "True", "Boolean" => "bool",
+            "Messages" => "Message",
+            default => $type
+        };
     }
 
     /**

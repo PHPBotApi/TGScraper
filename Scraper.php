@@ -18,6 +18,7 @@ $body = Scraper::GetDOMDocument(response: (string)$response->getBody());
 $check_version = false;
 foreach ($body as $element) {
 
+    //get last bot api version
     if (!$check_version) {
         if (str_starts_with(haystack: $element->textContent, needle: 'Bot API')) {
             $check_version = true;
@@ -25,12 +26,26 @@ foreach ($body as $element) {
         }
     }
 
+    //return type and name of type/method
     if ($element->nodeName == 'h4') $child_info = Scraper::get_info(element: $element);
 
     if (isset($child_info)) {
 
-        if ($element->nodeName == 'p') Scraper::set_description(element: $element);
+        //set description of type/method
+        if ($element->nodeName == 'p') {
+            Scraper::set_description(element: $element);
+            if (strpos($element->textContent, "It should be one of")) $extended_by = true;
+        }
 
+        //set extended_by of type/method
+        if (isset($extended_by) && $extended_by) {
+            if ($element->nodeName == 'ul') {
+                Scraper::set_extended_by(element: $element);
+                $extended_by = false;
+            }
+        }
+
+        //set all fields of type/method
         if ($element->nodeName == 'table') {
             foreach ($element->childNodes as $child) {
                 if ($child->nodeName == 'tbody') {
