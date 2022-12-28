@@ -150,7 +150,13 @@ class Scraper
             }
             return $array;
         } else {
-            return [self::fix_type($type)];
+            if (stripos($type, "Array of") === 0) {
+                $replace = str_replace("Array of ", "Array<", $type, $count);
+                $replace .= str_repeat('>', $count);
+                return [self::fix_type($replace)];
+            } else {
+                return [self::fix_type($type)];
+            }
         }
     }
 
@@ -163,6 +169,8 @@ class Scraper
     {
 
         return match ($type) {
+            "Array<String>" => "Array<string>",
+            "Array<Integer>" => "Array<int>",
             "Float", "Float number" => "float",
             "String" => "string",
             "Integer" => "int",
