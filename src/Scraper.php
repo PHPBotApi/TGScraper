@@ -71,7 +71,10 @@ class Scraper
             }
 
             self::$json[self::$type][self::$name] = [
-                'name' => self::$name
+                'name' => self::$name,
+                'description' => '',
+                'fields' => [],
+                'extended_by' => []
             ];
 
             return ['type' => self::$type, 'name' => self::$name];
