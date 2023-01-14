@@ -2,7 +2,6 @@
 if (!is_dir("vendor")) {
     die("\e[1;31mNo vendor directory found. Please follow README.md to install libraries with composer\e[0m");
 }
-
 require 'vendor/autoload.php';
 require 'src/Gui.php';
 require 'src/Scraper.php';
