@@ -16,17 +16,15 @@ _P.s. This Repository is a part of PHPBotApi Framework._
 
 
 ``` php
-require 'vendor/autoload.php';
-require 'src/Gui.php';
-require 'src/Scraper.php';
+$scraper = new Scraper();
 
-use Phpbotapi\TgScraper\Gui;
-use Phpbotapi\TgScraper\Scraper;
+try {
+    $response = $scraper->getResponse();
+} catch (Exception $e) {
+    die($e->getMessage());
+}
 
-Gui::introduction();
-
-$response = (new Scraper)->GetResponse();
-$body = Scraper::GetDOMDocument(response: (string)$response->getBody());
+$body = $scraper->getDOMDocument(response: (string)$response->getBody());
 ```
 
 # Requirements
