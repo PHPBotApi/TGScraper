@@ -1,0 +1,24 @@
+services:
+  nginx:
+    build:
+      context: ./docker/nginx
+    image: tgscraper/nginx:1.0.5
+    ports:
+      - "80:80"
+    volumes:
+      - ./docker/nginx/conf.d/TGScraper.dev.conf:/etc/nginx/conf.d/TGScraper.dev.conf
+      - ./:/var/www/TGScraper
+    working_dir: /var/www/TGScraper
+  php:
+    build:
+      context: ./docker/php
+    image: tgscraper/php:1.1.0
+    volumes:
+      - ./:/var/www/TGScraper
+    working_dir: /var/www/TGScraper
+
+  composer:
+    image: composer/composer
+    volumes:
+      - ./:/app
+    command: composer install --ignore-platform-reqs

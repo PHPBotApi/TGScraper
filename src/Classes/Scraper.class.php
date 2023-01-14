@@ -1,37 +1,39 @@
 <?php
 
-namespace Phpbotapi\TgScraper;
+namespace PHPBotApi\TGScraper;
 
 use DOMDocument;
 use DOMNodeList;
+use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use JetBrains\PhpStorm\NoReturn;
+use Phpbotapi\Interfaces\ScraperInterface;
 use Psr\Http\Message\ResponseInterface;
 
-class Scraper
+class Scraper implements ScraperInterface
 {
-    private static string $name;
-    private static string $type;
-    private static Client $Client;
-    public static int $types_count = 0;
-    public static int $methods_count = 0;
-    public static array $json = [
+    private string $name = '';
+    private string $type = '';
+    private int $types_count = 0;
+    private int $methods_count = 0;
+    private array $json = [
         'types' => [],
         'methods' => []
     ];
 
 
     /**
-     * @return ResponseInterface|void
+     * @return ResponseInterface
+     * @throws Exception On error response
      */
-    public function GetResponse()
+    public function getResponse(): ResponseInterface
     {
         try {
-            self::$Client = new Client();
-            $response = self::$Client->request('GET', 'https://core.telegram.org/bots/api');
+            $Client = new Client();
+            $response = $Client->request('GET', 'https://core.telegram.org/bots/api');
         } catch (GuzzleException $e) {
-            die('Error on response: ' . $e->getMessage());
+            throw new Exception('Error on response: ' . $e->getMessage());
         }
         return $response;
     }
@@ -40,7 +42,7 @@ class Scraper
      * @param $response
      * @return DOMNodeList
      */
-    public static function GetDOMDocument($response): DOMNodeList
+    public function getDOMDocument($response): DOMNodeList
     {
 
         libxml_use_internal_errors(true);
@@ -52,93 +54,113 @@ class Scraper
     }
 
     /**
+     * @return int
+     */
+    public function getTypesCount(): int
+    {
+        return $this->types_count;
+    }
+
+    /**
+     * @return int
+     */
+    public function getMethodsCount(): int
+    {
+        return $this->methods_count;
+    }
+
+    /**
      * @param $element
      * @return array|null
      */
-    public static function get_info($element): array|null
+    public function getInfo($element): array|null
     {
         $textContent = $element->textContent;
         if (!strpos($textContent, ' ')) {
-            self::$name = $textContent;
-            $ascii = ord(self::$name[0]);
+            $this->name = $textContent;
+            $ascii = ord($this->name[0]);
 
             if ($ascii >= 65 && $ascii <= 90) {
-                self::$types_count++;
-                self::$type = 'types';
+                $this->types_count++;
+                $this->type = 'types';
             } else {
-                self::$methods_count++;
-                self::$type = 'methods';
+                $this->methods_count++;
+                $this->type = 'methods';
             }
 
-            self::$json[self::$type][self::$name] = [
-                'name' => self::$name,
+            $this->json[$this->type][$this->name] = [
+                'name' => $this->name,
                 'description' => '',
                 'fields' => [],
                 'extended_by' => []
             ];
 
-            return ['type' => self::$type, 'name' => self::$name];
+            return ['type' => $this->type, 'name' => $this->name];
         } else return null;
     }
 
     /**
      * @param $element
-     * @return void
+     * @return ScraperInterface
      */
-    public static function set_description($element): void
+    public function setDescription($element): ScraperInterface
     {
-        self::$json[self::$type][self::$name]['description'] = $element->textContent;
+        $this->json[$this->type][$this->name]['description'] = $element->textContent;
+        return $this;
     }
 
     /**
      * @param $matches
-     * @return void
+     * @return ScraperInterface
      */
-    #[NoReturn] public static function set_fields($matches): void
+    #[NoReturn] public function setFields($matches): ScraperInterface
     {
         foreach ($matches[0] as $tr) {
             $values = explode("\n", $tr);
             $name = @$values[0];
             $type = @$values[1];
 
-            if (self::$type == 'types') {
+            if ($this->type == 'types') {
                 $desc = @$values[2];
-                self::$json[self::$type][self::$name]['fields'][] = [
+                $this->json[$this->type][$this->name]['fields'][] = [
                     'name' => $name,
-                    'type' => self::clean_type($type),
+                    'type' => $this->cleanType($type),
                     'description' => $desc
                 ];
-            } elseif (self::$type == 'methods') {
+            } elseif ($this->type == 'methods') {
                 $required = @$values[2];
                 $desc = @$values[3];
 
-                self::$json[self::$type][self::$name]['fields'][] = [
+                $this->json[$this->type][$this->name]['fields'][] = [
                     'name' => $name,
-                    'type' => self::clean_type($type),
+                    'type' => $this->cleanType($type),
                     'required' => str_starts_with($required, 'Optional'),
                     'description' => $desc
                 ];
             }
         }
+        return $this;
     }
 
     /**
      * @param $element
-     * @return void
+     * @return ScraperInterface
      */
-    public static function set_extended_by($element): void
+    public function SetExtendedBy($element): ScraperInterface
     {
         $extensions = array_filter(explode("\n", $element->textContent), "strlen");
         foreach ($extensions as $extension) {
-            self::$json[self::$type][self::$name]['extended_by'][] = $extension;
+            $this->json[$this->type][$this->name]['extended_by'][] = $extension;
         }
+
+        return $this;
     }
 
     /**
      * @param string $type
      * @return array|string[]
      */
-    private static function clean_type(string $type): array
+    private function cleanType(string $type): array
     {
         $array = [];
         if (preg_match("/ and | or |, /", $type)) {
@@ -146,26 +168,25 @@ class Scraper
 
             $types = explode('&', $raw);
             foreach ($types as $type) {
-                $array[] = self::fix_type($type);
+                $array[] = $this->fixType($type);
             }
             return $array;
         } else {
             if (stripos($type, "Array of") === 0) {
                 $replace = str_replace("Array of ", "Array<", $type, $count);
                 $replace .= str_repeat('>', $count);
-                return [self::fix_type($replace)];
+                return [$this->fixType($replace)];
             } else {
-                return [self::fix_type($type)];
+                return [$this->fixType($type)];
             }
         }
     }
-
 
     /**
      * @param string $type
      * @return string
      */
-    private static function fix_type(string $type): string
+    private function fixType(string $type): string
     {
 
         return match ($type) {
@@ -181,10 +202,16 @@ class Scraper
     }
 
     /**
-     * @return void
+     *
+     * @return bool true when file api.json is created, if an error occurred returns false
      */
-    public static function get_json(): void
+    public function getJson(): bool
     {
-        file_put_contents('api.json', json_encode(self::$json, JSON_PRETTY_PRINT));
+        try {
+            file_put_contents('api.json', json_encode($this->json, JSON_PRETTY_PRINT));
+            return true;
+        } catch (Exception) {
+            return false;
+        }
     }
 }

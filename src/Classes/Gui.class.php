@@ -1,10 +1,15 @@
 <?php
 
-namespace Phpbotapi\TgScraper;
+namespace PHPBotApi\TGScraper;
 
-class Gui
+use PHPBotApi\Interfaces\GuiInterface;
+
+class Gui implements GuiInterface
 {
-    public static function introduction(): void
+    /**
+     * @return string
+     */
+    public static function getIntroduction(): string
     {
         $text = "\e[1;35mTelegram Api Scraper developed by Guard4534\e[0m" . PHP_EOL . PHP_EOL;
         $text .= "\e[1;35mThis project is an integral part of a framework\e[0m" . PHP_EOL;
@@ -16,27 +21,27 @@ class Gui
         $text .= PHP_EOL . PHP_EOL . PHP_EOL;
         $text .= "Starting Script..." . PHP_EOL . PHP_EOL;
 
-        echo $text;
+        return $text;
     }
 
     /**
      * @param string $version
-     * @return void
+     * @return string
      */
-    public static function ApiVersion(string $version): void
+    public static function getApiVersion(string $version): string
     {
-        echo "New Telegram Bot Api version found: $version" . PHP_EOL;
+        return "New Telegram Bot Api version found: $version" . PHP_EOL;
     }
 
     /**
      * @param int $types_count
      * @param int $methods_count
-     * @return void
+     * @return string
      */
-    public static function Report(int $types_count, int $methods_count): void
+    public static function getReport(int $types_count, int $methods_count): string
     {
         $text = "Types founds -> " . $types_count . PHP_EOL;
         $text .= "Methods founds -> " . $methods_count . PHP_EOL;
-        echo $text;
+        return $text;
     }
 }
